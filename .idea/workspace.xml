@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75ec14cf-f8ce-4a31-97e8-4745817840c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
@@ -74,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585679797781</updated>
       <workItem from="1585679806663" duration="3644000" />
-      <workItem from="1585715189604" duration="21735000" />
+      <workItem from="1585715189604" duration="21916000" />
     </task>
     <servers />
   </component>
@@ -86,9 +85,9 @@
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="703" y="330" key="#com.intellij.fileTypes.FileTypeChooser/75.0.1845.1080@75.0.1845.1080" timestamp="1585738517841" />
-    <state x="648" y="249" width="699" height="582" key="find.popup" timestamp="1585736487663">
+    <state x="648" y="249" width="699" height="582" key="find.popup" timestamp="1585740709402">
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
-    <state x="648" y="249" width="699" height="582" key="find.popup/75.0.1845.1080@75.0.1845.1080" timestamp="1585736487663" />
+    <state x="648" y="249" width="699" height="582" key="find.popup/75.0.1845.1080@75.0.1845.1080" timestamp="1585740709402" />
   </component>
 </project>
