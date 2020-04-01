@@ -282,19 +282,19 @@
                             <input type="hidden" name="{{ que.id }}" value="{{ 'F' }}"/>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'A' }}"/>
-                                Option 1
+                                {{que.choice_a}}
                             </label>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'B' }}"/>
-                                Option 2
+                                {{que.choice_b}}
                             </label>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'C' }}"/>
-                                Option 3
+                                {{que.choice_c}}
                             </label>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'D' }}"/>
-                                Option 4
+                                {{que.choice_d}}
                             </label>
                         </div>
                     </fieldset>
