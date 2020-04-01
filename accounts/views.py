@@ -17,7 +17,7 @@ def register(request):
 
         if password == confirm_password:
             try:
-                User.objects.get(username=email)
+                User.objects.get(username=roll)
                 return render(request, 'register.html', {'error': 'User already exists.'})
 
             except User.DoesNotExist:
@@ -37,7 +37,7 @@ def register(request):
 
 def login(request):
     if request.method == 'POST':
-        user = auth.authenticate(username=request.POST['roll'].strip().lower(), password=request.POST['password'])
+        user = auth.authenticate(username=request.POST['roll'], password=request.POST['password'])
         if user is not None:
             auth.login(request, user)
             return redirect(request.GET.get('next', 'index'))
