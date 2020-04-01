@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>MPI Quiz</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         * {
@@ -234,6 +236,10 @@
 
         @media only screen and (max-width: 768px) {
 
+            .container{
+                transform: translate(10vw, 5vh);
+            }
+
             nav {
                 display: block;
                 text-align: center;
@@ -276,15 +282,15 @@
 </head>
 <body>
 <div class="container">
-    <nav>
+    <nav  data-aos="zoom-in">
         Microprocessor & Interfacing - <span>Deepak Sharma</span>
     </nav>
     <div class="inner-container">
-        <div class="left">
+        <div class="left" data-aos="zoom-in">
             <span class="title">Register</span>
             <div>Already have an account? <a href="{% url 'login' %}"> <span>Sign In</span></a></div>
         </div>
-        <div class="right">
+        <div class="right" data-aos="fade-left">
             <form class="go-right" method="post" action="{% url 'register' %}">
                 {% csrf_token %}
                 <div>
@@ -318,8 +324,12 @@
         </div>
     </div>
 </div>
-</body>
 <div class="show-name">
     <span>D</span>evesh
 </div>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </html>

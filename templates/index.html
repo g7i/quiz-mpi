@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>MPI Quiz</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         * {
@@ -205,6 +207,9 @@
         }
 
         @media only screen and (max-width: 768px) {
+            .container{
+                transform: translate(10vw, 5vh);
+            }
             nav {
                 flex-direction: column;
                 align-items: center;
@@ -257,7 +262,7 @@
             <a href="{% url 'logout' %}"><li>Logout</li></a>
         </ul>
     </nav>
-    <div class="list">
+    <div class="list" data-aos="slide-left">
         <div class="heading">
             <span class="text">Available Quizzes</span>
             <span class="hr"></span>
@@ -265,7 +270,7 @@
     </div>
 
     {% for quiz in quizzes %}
-        <div class="item">
+        <div class="item" data-aos="zoom-in">
             <div class="serial">
                 {{ forloop.counter0|add:1 }}
             </div>
@@ -286,4 +291,8 @@
     <span>D</span>evesh
 </div>
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </html>

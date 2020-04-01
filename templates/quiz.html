@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>MPI Quiz</title>
 
     <style>
         * {
@@ -138,7 +139,7 @@
         #neu:hover {
             box-shadow: inset 5px 5px 10px rgba(163, 177, 198, 0.6),
             inset -5px -5px 10px rgba(255, 255, 255, 0.5);
-            scale: 0.98;
+            transform: scale(0.98);
         }
 
         #neu:hover svg {
@@ -229,6 +230,9 @@
         }
 
         @media only screen and (max-width: 768px) {
+            .container{
+                transform: translate(10vw, 5vh);
+            }
             .hr {
                 width: 35vw;
             }
