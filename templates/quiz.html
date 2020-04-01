@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #727B87;
+        }
+
+        body {
+            background-color: #e0e5ec;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 80vw;
+            height: 80vh;
+            box-shadow: 9px 9px 18px rgba(163, 177, 198, 0.6),
+            -9px -9px 18px rgba(255, 255, 255, 0.5);
+            transform: translate(10vw, 10vh);
+            overflow-y: scroll;
+        }
+
+        nav {
+            width: auto;
+            min-width: 70vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 25px;
+            margin-top: 40px;
+            /* text-shadow: 1px 1px 1px rgb(163, 177, 198, 0.6),
+              -1px -1px 1px rgba(255, 255, 255, 0.5); */
+        }
+
+        nav span {
+            font-size: larger;
+            font-weight: 900;
+            color: #2cd8b3;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li {
+            cursor: pointer;
+            padding-right: 10px;
+            color: #2cd8b3;
+            transition: all 1s;
+        }
+
+        .active {
+            background-color: #2cd8b3;
+            border-radius: 50px;
+            color: white;
+            padding-right: 7px;
+            padding-left: 7px;
+            margin-right: 10px;
+            font-size: 15px;
+            box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.5),
+            2px 2px 3px rgba(163, 177, 198, 0.6);
+        }
+
+        ul li:hover {
+            background-color: #2cd8b3;
+            border-radius: 50px;
+            color: white;
+            padding-right: 7px;
+            padding-left: 7px;
+            margin-right: 10px;
+            font-size: 15px;
+            box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.5),
+            2px 2px 3px rgba(163, 177, 198, 0.6);
+        }
+
+        .list {
+            margin-top: 2vh;
+            margin-bottom: 4vh;
+            width: 100%;
+            height: 5vh;
+        }
+
+        .list .heading {
+            display: flex;
+            font-size: small;
+            align-items: center;
+        }
+
+        .hr {
+            border: none;
+            border-top: 1px solid #727B87;
+            height: 1px !important;
+            width: calc(80% - 80px);
+        }
+
+        .list .heading .text {
+            width: 80px;
+            padding-left: 3vw;
+            text-align: left;
+        }
+
+        .title {
+            margin-bottom: 3vh;
+        }
+
+        .title span {
+            font-size: large;
+            text-shadow: -3px -3px 6px rgba(255, 255, 255, 0.5),
+            3px 3px 6px rgba(163, 177, 198, 0.6);
+            color: #ea4c89;
+        }
+
+        .question {
+            padding: 50px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .question .que {
+            color: #7f858d;
+            text-align: center;
+        }
+
+        #neu:hover {
+            box-shadow: inset 5px 5px 10px rgba(163, 177, 198, 0.6),
+            inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+            scale: 0.98;
+        }
+
+        #neu:hover svg {
+            transform: scale(0.98);
+        }
+
+        #neu {
+            height: 50px;
+            display: grid;
+            width: 50px;
+            background-color: #e0e5ec;
+            border-radius: 50%;
+            box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6),
+            -5px -5px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        fieldset {
+            border: 0;
+        }
+
+        .opt {
+            margin-top: 40px;
+            display: grid;
+            width: 50vw;
+            text-align: center;
+            grid-template-columns: 50% 50%;
+            grid-row-gap: 20px;
+        }
+
+        .counter {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+            font-weight: 900;
+            color: #5accfc;
+            box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.5),
+            3px 3px 6px rgba(163, 177, 198, 0.6);
+        }
+
+        img {
+            margin-top: 20px;
+            width: 70%;
+            height: auto;
+        }
+
+        .Timer {
+            text-align: center;
+            width: calc(20% - 80px);
+        }
+
+        .question:not(:first-of-type) {
+            display: none;
+        }
+
+        .btn {
+            /* background-color: #5accfc; */
+            cursor: pointer;
+            /* color: white; */
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            margin-right: 40px;
+            border-radius: 50px;
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5),
+            2px 2px 4px rgba(163, 177, 198, 0.6);
+        }
+
+        .btn:hover {
+            box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+            inset 2px 2px 4px rgba(163, 177, 198, 0.6);
+        }
+
+        .btn:hover span {
+            transform: scale(0.92);
+        }
+
+        .btn-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hr {
+                width: 35vw;
+            }
+
+            .Timer {
+                text-align: center;
+                width: calc(50% - 80px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <a id="neu" class="prev" href="">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M20.697 24L9.303 16.003 20.697 8z" fill="#e22d48"></path>
+            </svg>
+        </a>
+        <span>{{ quiz.name }}</span>
+        <a id="neu" class="next" href="">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M11.303 8l11.394 7.997L11.303 24z" fill="#e22d48"></path>
+            </svg>
+        </a>
+    </nav>
+    <div class="list">
+        <div class="heading">
+            <span class="text">Questions</span>
+            <span class="hr"></span>
+            <span class="Timer">Starting...</span>
+        </div>
+    </div>
+    <span class="counter">1</span>
+    <div class="questions">
+        <form method="post" action="{% url 'submit' quiz.id %}" id="submit">
+            {% csrf_token %}
+            {% for que in quiz.questions.all %}
+                <div class="question" id="question{{ forloop.counter0|add:1 }}">
+                    <div class="que">
+                        {{ que.question }}
+                    </div>
+                    {% if que.image %}
+                        <img src="{{ que.image.url }}" alt="img"/>
+                    {% endif %}
+                    <fieldset>
+                        <div class="opt">
+                            <input type="hidden" name="{{ que.id }}" value="{{ 'F' }}"/>
+                            <label>
+                                <input type="radio" name="{{ que.id }}" value="{{ 'A' }}"/>
+                                Option 1
+                            </label>
+                            <label>
+                                <input type="radio" name="{{ que.id }}" value="{{ 'B' }}"/>
+                                Option 2
+                            </label>
+                            <label>
+                                <input type="radio" name="{{ que.id }}" value="{{ 'C' }}"/>
+                                Option 3
+                            </label>
+                            <label>
+                                <input type="radio" name="{{ que.id }}" value="{{ 'D' }}"/>
+                                Option 4
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            {% endfor %}
+    </form>
+    </div>
+    <div class="btn-wrapper">
+        <div class="btn" onclick="javascript:{min=5}">
+            <span>Submit</span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var start = -1, min = 0;
+
+    setInterval(function () {
+        start += 1;
+        if (start === 60) {
+            start = 0;
+            min += 1;
+        }
+        if (min > 4) {
+            $("#submit").submit()
+        }
+        $(".Timer").text(min + " Min " + (start + 1) + " Sec.");
+    }, 1000);
+
+    $(".next").click(function () {
+        var cur = Number($(".counter").html());
+        if (!$(`#question${cur + 1}`).length) {
+            $(`#question${cur}`).slideUp();
+            $(`#question${cur}`).slideDown();
+            return false;
+        }
+        $(`#question${cur}`).slideUp();
+        $(`#question${cur + 1}`).slideDown().css('display', 'flex');
+        $(".counter").html(cur + 1);
+        return false;
+    });
+    $(".prev").click(function () {
+        var cur = Number($(".counter").html());
+        if (!$(`#question${cur - 1}`).length) {
+            $(`#question${cur}`).slideUp();
+            $(`#question${cur}`).slideDown();
+            return false;
+        }
+        $(`#question${cur}`).slideUp();
+        $(`#question${cur - 1}`).slideDown().css('display', 'flex');
+        $(".counter").html(cur - 1);
+        return false;
+    });
+</script>
+</html>
