@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>MPI Quiz</title>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         * {
@@ -235,7 +235,7 @@
 
         @media only screen and (max-width: 768px) {
 
-            .container{
+            .container {
                 transform: translate(10vw, 5vh);
             }
 
@@ -281,7 +281,7 @@
 </head>
 <body>
 <div class="container">
-    <nav  data-aos="zoom-in">
+    <nav data-aos="zoom-in">
         Microprocessor & Interfacing - <span>Deepak Sharma</span>
     </nav>
     <div class="inner-container">
@@ -329,6 +329,11 @@
 </body>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    $(function () {
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        $("html, body").css({"width": w, "height": h});
+    });
     AOS.init();
 </script>
 </html>
