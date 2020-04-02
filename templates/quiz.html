@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>MPI Quiz</title>
 
@@ -267,7 +267,7 @@
     </div>
     <span class="counter">1</span>
     <div class="questions">
-        <form method="post" action="{% url 'submit' quiz.id %}" id="submit">
+        <form method="post" action="{% url 'submit' quiz.id %}" id="quiz">
             {% csrf_token %}
             {% for que in quiz.questions.all %}
                 <div class="question" id="question{{ forloop.counter0|add:1 }}">
@@ -303,7 +303,7 @@
     </form>
     </div>
     <div class="btn-wrapper">
-        <div class="btn" onclick="javascript:{min=5}">
+        <div class="btn" id="sbtn">
             <span>Submit</span>
         </div>
     </div>
@@ -318,11 +318,15 @@
             start = 0;
             min += 1;
         }
-        if (min > 4) {
+        if (min > 40) {
             $("#submit").submit()
         }
         $(".Timer").text(min + " Min " + (start + 1) + " Sec.");
     }, 1000);
+
+    $("#sbtn").click(function () {
+        $('#quiz').submit();
+    });
 
     $(".next").click(function () {
         var cur = Number($(".counter").html());
