@@ -16,6 +16,7 @@
 
         body {
             background-color: #e0e5ec;
+            overflow-y: scroll;
         }
 
         .container {
@@ -329,11 +330,6 @@
 </body>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    $(function () {
-        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        $("html, body").css({"width": w, "height": h});
-    });
     AOS.init();
 </script>
 </html>
