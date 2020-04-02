@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="75ec14cf-f8ce-4a31-97e8-4745817840c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +78,7 @@
       <workItem from="1585679806663" duration="3644000" />
       <workItem from="1585715189604" duration="23303000" />
       <workItem from="1585761291944" duration="17000" />
-      <workItem from="1585830456042" duration="1675000" />
+      <workItem from="1585830456042" duration="6774000" />
     </task>
     <servers />
   </component>
@@ -83,9 +90,9 @@
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
     <state x="703" y="330" key="#com.intellij.fileTypes.FileTypeChooser/75.0.1845.1080@75.0.1845.1080" timestamp="1585738517841" />
-    <state x="648" y="249" width="699" height="582" key="find.popup" timestamp="1585740709402">
+    <state x="648" y="249" width="699" height="582" key="find.popup" timestamp="1585838107992">
       <screen x="75" y="0" width="1845" height="1080" />
     </state>
-    <state x="648" y="249" width="699" height="582" key="find.popup/75.0.1845.1080@75.0.1845.1080" timestamp="1585740709402" />
+    <state x="648" y="249" width="699" height="582" key="find.popup/75.0.1845.1080@75.0.1845.1080" timestamp="1585838107992" />
   </component>
 </project>

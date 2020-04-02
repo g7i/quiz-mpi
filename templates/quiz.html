@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>MPI Quiz</title>
 
@@ -44,7 +44,7 @@
         nav span {
             font-size: larger;
             font-weight: 900;
-            color: #2cd8b3;
+            color: #c018d8;
         }
 
         ul {
@@ -56,12 +56,12 @@
         ul li {
             cursor: pointer;
             padding-right: 10px;
-            color: #2cd8b3;
+            color: #c018d8;
             transition: all 1s;
         }
 
         .active {
-            background-color: #2cd8b3;
+            background-color: #c018d8;
             border-radius: 50px;
             color: white;
             padding-right: 7px;
@@ -73,7 +73,7 @@
         }
 
         ul li:hover {
-            background-color: #2cd8b3;
+            background-color: #c018d8;
             border-radius: 50px;
             color: white;
             padding-right: 7px;
@@ -180,6 +180,7 @@
             color: #5accfc;
             box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.5),
             3px 3px 6px rgba(163, 177, 198, 0.6);
+            overflow-y: scroll;
         }
 
         img {
@@ -229,9 +230,10 @@
         }
 
         @media only screen and (max-width: 768px) {
-            .container{
+            .container {
                 transform: translate(10vw, 5vh);
             }
+
             .hr {
                 width: 35vw;
             }
@@ -267,7 +269,7 @@
     </div>
     <span class="counter">1</span>
     <div class="questions">
-        <form method="post" action="{% url 'submit' quiz.id %}" id="quiz">
+        <form method="post" action="{% url 'submit' quiz.id %}" id="quizf">
             {% csrf_token %}
             {% for que in quiz.questions.all %}
                 <div class="question" id="question{{ forloop.counter0|add:1 }}">
@@ -282,25 +284,25 @@
                             <input type="hidden" name="{{ que.id }}" value="{{ 'F' }}"/>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'A' }}"/>
-                                {{que.choice_a}}
+                                {{ que.choice_a }}
                             </label>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'B' }}"/>
-                                {{que.choice_b}}
+                                {{ que.choice_b }}
                             </label>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'C' }}"/>
-                                {{que.choice_c}}
+                                {{ que.choice_c }}
                             </label>
                             <label>
                                 <input type="radio" name="{{ que.id }}" value="{{ 'D' }}"/>
-                                {{que.choice_d}}
+                                {{ que.choice_d }}
                             </label>
                         </div>
                     </fieldset>
                 </div>
             {% endfor %}
-    </form>
+        </form>
     </div>
     <div class="btn-wrapper">
         <div class="btn" id="sbtn">
@@ -308,6 +310,8 @@
         </div>
     </div>
 </div>
+
+
 </body>
 <script>
     var start = -1, min = 0;
@@ -318,14 +322,14 @@
             start = 0;
             min += 1;
         }
-        if (min > 40) {
-            $("#submit").submit()
+        if (min > 29) {
+            $("#quizf").submit()
         }
-        $(".Timer").text(min + " Min " + (start + 1) + " Sec.");
+        $(".Timer").text(min + " Min " + (start + 1) + " Sec. (Time:30Mins)");
     }, 1000);
 
     $("#sbtn").click(function () {
-        $('#quiz').submit();
+        $('#quizf').submit();
     });
 
     $(".next").click(function () {

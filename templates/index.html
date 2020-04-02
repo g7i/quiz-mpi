@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>MPI Quiz</title>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         * {
@@ -45,7 +45,7 @@
         nav span {
             font-size: larger;
             font-weight: 900;
-            color: #2cd8b3;
+            color: #c018d8;
         }
 
         ul {
@@ -57,12 +57,12 @@
         ul li {
             cursor: pointer;
             padding-right: 10px;
-            color: #2cd8b3;
+            color: #c018d8;
             transition: all 1s;
         }
 
         .active {
-            background-color: #2cd8b3;
+            background-color: #c018d8;
             border-radius: 50px;
             color: white;
             padding-right: 7px;
@@ -74,7 +74,7 @@
         }
 
         ul li:hover {
-            background-color: #2cd8b3;
+            background-color: #c018d8;
             border-radius: 50px;
             color: white;
             padding-right: 7px;
@@ -111,6 +111,7 @@
         }
 
         .item {
+            border-radius: 20px;
             width: 90%;
             display: flex;
             margin-bottom: 20px;
@@ -201,14 +202,15 @@
         nav span > span {
             font-weight: normal;
             font-size: medium;
-            color: #2cd8b3;
+            color: #c018d8;
             padding-left: 10px;
         }
 
         @media only screen and (max-width: 768px) {
-            .container{
+            .container {
                 transform: translate(10vw, 5vh);
             }
+
             nav {
                 flex-direction: column;
                 align-items: center;
@@ -216,9 +218,14 @@
                 min-height: 9vh;
                 text-align: center;
             }
+
             nav span {
-            margin-bottom: 10px;
-        }
+                margin-bottom: 10px;
+            }
+
+            .item {
+                height: 7vh;
+            }
         }
 
         .show-name {
@@ -239,7 +246,7 @@
             font-size: 30px;
             font-weight: bolder;
             box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.5),
-          3px 3px 6px rgba(163, 177, 198, 0.6);
+            3px 3px 6px rgba(163, 177, 198, 0.6);
             color: #5accfc;
             width: 35px;
             height: 35px;
@@ -257,8 +264,12 @@
         <span>Microprocessor & Interfacing - <span>Deepak Sharma</span></span>
         <ul>
             <li class="active">Home</li>
-            <a href="{% url 'profile' %}"><li>Profile</li></a>
-            <a href="{% url 'logout' %}"><li>Logout</li></a>
+            <a href="{% url 'profile' %}">
+                <li>Profile</li>
+            </a>
+            <a href="{% url 'logout' %}">
+                <li>Logout</li>
+            </a>
         </ul>
     </nav>
     <div class="list" data-aos="slide-left">
@@ -277,9 +288,11 @@
                 {{ quiz.name }}<br/>
                 <span>{{ quiz.title }}</span>
             </div>
-            <div class="btn">
-                <a href="{% url 'start' quiz.id %}"><span>Start</span></a>
-            </div>
+            <a href="{% url 'start' quiz.id %}">
+                <div class="btn">
+                    <span>Start</span>
+                </div>
+            </a>
         </div>
     {% empty %}
         <div class="empty">Sorry, No Quiz Available Right Now!</div>
@@ -292,6 +305,6 @@
 </body>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+    AOS.init();
 </script>
 </html>
