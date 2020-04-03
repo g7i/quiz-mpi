@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75ec14cf-f8ce-4a31-97e8-4745817840c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,8 @@
       <workItem from="1585679806663" duration="3644000" />
       <workItem from="1585715189604" duration="23303000" />
       <workItem from="1585761291944" duration="17000" />
-      <workItem from="1585830456042" duration="6774000" />
+      <workItem from="1585830456042" duration="7689000" />
+      <workItem from="1585888038864" duration="653000" />
     </task>
     <servers />
   </component>
