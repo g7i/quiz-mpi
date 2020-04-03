@@ -110,7 +110,7 @@
             padding: 7px 12px;
             width: 25vw;
             outline: 0;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #5accfc;
         }
 
@@ -235,6 +235,21 @@
             border-radius: 50%;
         }
 
+        select {
+            outline: none;
+            border: 0;
+            margin-bottom: 20px;
+            color: #5accfc;
+            background-color: #e0e5ec;
+            width: 25vw;
+            height: 30px;
+            border-radius: 30px;
+            padding-left: 11vw;
+            align-items: center;
+            box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.5),
+            inset 3px 3px 6px rgba(163, 177, 198, 0.6);
+        }
+
         @media only screen and (max-width: 768px) {
 
             .container {
@@ -270,6 +285,11 @@
                 width: 100%;
             }
 
+            select {
+                width: 100%;
+                padding-left: 40%;
+            }
+
             .btn-wrapper {
                 margin-top: 0;
                 justify-content: center;
@@ -279,12 +299,13 @@
         a {
             text-decoration: none;
         }
+
     </style>
 </head>
 <body>
 <div class="container">
     <nav data-aos="zoom-in">
-        Microprocessor & Interfacing - <span>Deepak Sharma</span>
+        MPI & DE - <span>Deepak Sharma</span>
     </nav>
     <div class="inner-container">
         <div class="left" data-aos="zoom-in">
@@ -303,8 +324,10 @@
                     <label for="name">Name</label>
                 </div>
                 <div>
-                    <input id="email" name="email" type="email" required/>
-                    <label for="email">Email</label>
+                    <select id="subject" name="subject" required>
+                        <option value="MPI">MPI</option>
+                        <option value="DE">DE</option>
+                    </select>
                 </div>
                 <div>
                     <input id="password" name="password" type="password" required/>

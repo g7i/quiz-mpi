@@ -23,11 +23,17 @@ class Question(models.Model):
 
 
 class Quiz(models.Model):
+    SUB = (
+        ('MPI', 'MPI'),
+        ('DE', 'DE'),
+    )
+
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
     questions = models.ManyToManyField(Question)
     created = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField()
+    subject = models.CharField(max_length=5, choices=SUB, default='MPI')
 
     def __str__(self):
         return self.name

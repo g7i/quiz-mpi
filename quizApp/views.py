@@ -7,7 +7,7 @@ from .models import Quiz
 
 @login_required(login_url='/accounts/')
 def index(request):
-    quizzes = list(Quiz.objects.filter(is_active=True).order_by('-created'))
+    quizzes = list(Quiz.objects.filter(is_active=True).filter(subject=request.user.last_name).order_by('-created'))
     attempted = list(Attempted.objects.filter(user=request.user).values_list('quiz', flat=True))
     for quiz in Quiz.objects.filter(is_active=True).order_by('-created'):
         if quiz.id in attempted:

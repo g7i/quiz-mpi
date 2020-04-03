@@ -11,7 +11,7 @@ def register(request):
     if request.method == 'POST':
         password = request.POST["password"]
         confirm_password = request.POST["confirm_password"]
-        email = request.POST["email"].strip().lower()
+        subject = request.POST["subject"]
         name = request.POST["name"]
         roll = request.POST["roll"]
 
@@ -22,7 +22,7 @@ def register(request):
 
             except User.DoesNotExist:
                 try:
-                    User.objects.create_user(username=roll, password=password, email=email, first_name=name)
+                    User.objects.create_user(username=roll, password=password, last_name=subject, first_name=name)
                     user = auth.authenticate(username=roll, password=password)
                     auth.login(request, user)
                     return redirect('index')
