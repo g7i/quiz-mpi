@@ -313,21 +313,24 @@
 
 </body>
 <script>
+    var myVar = setInterval(myTimer, 1000);
     var start = -1, min = 0;
 
-    setInterval(function () {
+    function myTimer() {
         start += 1;
         if (start === 60) {
             start = 0;
             min += 1;
         }
         if (min > 29) {
+            clearInterval(myVar);
             $("#quizf").submit()
         }
         $(".Timer").text(min + " Min " + (start + 1) + " Sec. (Time:30Mins)");
-    }, 1000);
+    };
 
     $("#sbtn").click(function () {
+        clearInterval(myVar);
         $('#quizf').submit();
     });
 
