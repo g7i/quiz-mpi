@@ -15,6 +15,9 @@ def register(request):
         name = request.POST["name"]
         roll = request.POST["roll"]
 
+        if "18EMCCS0" not in roll and "18EMCCS1" not in roll and "19EMCCS2" not in roll:
+            return render(request, 'register.html', {'error': 'Invalid Roll Number.'})
+
         if password == confirm_password:
             try:
                 User.objects.get(username=roll)
@@ -54,18 +57,22 @@ def logout(request):
 
 @login_required(login_url='/accounts/')
 def profile(request):
-    return render(request, 'profile.html', {'attempted': Attempted.objects.filter(user=request.user).order_by('-created')})
+    return render(request, 'profile.html',
+                  {'attempted': Attempted.objects.filter(user=request.user).order_by('-created')})
 
 
 @login_required(login_url='/accounts/')
 def submit(request, id):
     if request.method == 'POST':
-        got = 0
         quiz = get_object_or_404(Quiz, pk=id)
-        for que in quiz.questions.all():
-            if que.answer == request.POST[f'{que.id}']:
-                got += que.credit
-        Attempted.objects.create(user=request.user, quiz=quiz, got=got)
+        try:
+            Attempted.objects.get(user=request.user, quiz=quiz)
+        except:
+            got = 0
+            for que in quiz.questions.all():
+                if que.answer == request.POST[f'{que.id}']:
+                    got += que.credit
+            Attempted.objects.create(user=request.user, quiz=quiz, got=got)
         return redirect('profile')
     else:
         return redirect('index')

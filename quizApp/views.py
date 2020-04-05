@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from accounts.models import Attempted
 from .models import Quiz
@@ -21,4 +21,6 @@ def index(request):
 @login_required(login_url='/accounts/')
 def start(request, id):
     quiz = get_object_or_404(Quiz, pk=id)
+    if not quiz.is_active:
+        return redirect('index')
     return render(request, 'quiz.html', {'quiz': quiz})

@@ -1,3 +1,4 @@
+{% load shuffle %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,7 +271,7 @@
     <div class="questions">
         <form method="post" action="{% url 'submit' quiz.id %}" id="quizf">
             {% csrf_token %}
-            {% for que in quiz.questions.all %}
+            {% for que in quiz.questions.all|shuffle %}
                 <div class="question" id="question{{ forloop.counter0|add:1 }}">
                     <div class="que">
                         {{ que.question }}
@@ -322,7 +323,7 @@
             start = 0;
             min += 1;
         }
-        if (min > 29) {
+        if (min > 59) {
             clearInterval(myVar);
             $("#quizf").submit()
         }
@@ -330,6 +331,10 @@
     };
 
     $("#sbtn").click(function () {
+        if ({{quiz.questions.all.count }} !== Number($(".counter").html())){
+            alert("Please Attempt all the questions");
+            return
+        }
         clearInterval(myVar);
         $('#quizf').submit();
     });
